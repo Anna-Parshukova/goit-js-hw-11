@@ -1,14 +1,27 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="https://unpkg.com/simplelightbox/dist/simple-lightbox.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/izitoast/dist/css/iziToast.min.css">
   
-  </head>
-  <body>
-    <!-- ENOENT: no such file or directory, open '/home/runner/work/goit-js-hw-11/goit-js-hw-11/src/partials/header.html' -->
+  <script type="module" crossorigin src="/goit-js-hw-11/commonHelpers.js"></script>
+  <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-b11e2a50.js">
+  <link rel="stylesheet" href="/goit-js-hw-11/assets/vendor-4b066c51.css">
+  <link rel="stylesheet" href="/goit-js-hw-11/assets/index-031214ef.css">
+</head>
 
-  </body>
+<body>
+  <form id="search-form">
+    <input type="text" id="search-input" placeholder="Search images..." required>
+    <button type="submit">Search</button>
+  </form>
+  <div class="loading">Loading...</div>
+  <div class="gallery" id="gallery"></div>
+  
+</body>
+
 </html>

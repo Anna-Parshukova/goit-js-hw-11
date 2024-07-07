@@ -1,0 +1,10 @@
+import{a as c,S as l,i as a}from"./assets/vendor-b11e2a50.js";(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))s(e);new MutationObserver(e=>{for(const o of e)if(o.type==="childList")for(const i of o.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&s(i)}).observe(document,{childList:!0,subtree:!0});function n(e){const o={};return e.integrity&&(o.integrity=e.integrity),e.referrerPolicy&&(o.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?o.credentials="include":e.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function s(e){if(e.ep)return;e.ep=!0;const o=n(e);fetch(e.href,o)}})();const d="44821264-a08a7741629af83990ada8b48",u="https://pixabay.com/api/",m=async t=>{try{return(await c.get(u,{params:{key:d,q:t,image_type:"photo",orientation:"horizontal",safesearch:!0}})).data.hits}catch{throw new Error("Failed to fetch images")}},f=t=>{const r=document.getElementById("gallery");if(r.innerHTML="",t.length===0){iziToast.error({title:"Error",message:"Sorry, there are no images matching your search query. Please try again!"});return}const n=t.map(s=>`
+      <a href="${s.largeImageURL}">
+        <img src="${s.webformatURL}" alt="${s.tags}">
+        <div>Likes: ${s.likes}</div>
+        <div>Views: ${s.views}</div>
+        <div>Comments: ${s.comments}</div>
+        <div>Downloads: ${s.downloads}</div>
+      </a>
+    `).join("");r.innerHTML=n,new l(".gallery a").refresh()},y=()=>{const t=document.querySelector(".loading");t.style.display="block"},g=()=>{const t=document.querySelector(".loading");t.style.display="none"},p=document.getElementById("search-form");p.addEventListener("submit",async t=>{t.preventDefault();const r=document.getElementById("search-input").value.trim();if(!r){a.warning({title:"Warning",message:"Search query cannot be empty!"});return}y();try{const n=await m(r);f(n)}catch(n){a.error({title:"Error",message:n.message})}finally{g()}});
+//# sourceMappingURL=commonHelpers.js.map
