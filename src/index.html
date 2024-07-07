@@ -1,14 +1,23 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
-  
-  </head>
-  <body>
-    <!-- <load ="partials/header.html" /> -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="https://unpkg.com/simplelightbox/dist/simple-lightbox.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/izitoast/dist/css/iziToast.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
 
-  </body>
+<body>
+  <form id="search-form">
+    <input type="text" id="search-input" placeholder="Search images..." required>
+    <button type="submit">Search</button>
+  </form>
+  <div class="loading">Loading...</div>
+  <div class="gallery" id="gallery"></div>
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>
